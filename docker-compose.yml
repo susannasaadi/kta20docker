@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+    app:
+        build:
+            context: ./docker
+            dockerfile: app.dockerfile
+        ports:
+            - 8080:80
+            # - 443:443
+        volumes: 
+            - ./html:/var/www/html
