@@ -15,10 +15,11 @@
     @foreach($posts as $key => $post)
         <div class="card mt-3 custom">
             <div class="card-body">
-                <p>{{ $post->content }}</p>
+                <p>{{$post->content }}</p>
                 <a href="/post/{{$post->id}}">read more</a>
             </div>
             <div class="card-footer text-muted">
+                <p>Author: {{\App\Models\User::find($post->user_id )->name}}</p>
                 {{$post->created_at->diffForHumans()}}
             </div>
         </div>
